@@ -1,10 +1,11 @@
 # sju-coml.github.io
-[sju-coml.github.io](https://sju-coml.github.io)
-SAI 공식 사이트
+[sju-coml.github.io](https://sju-coml.github.io)  
+정적으로 만든 SAI 공식 웹 사이트
 
 ## Author
 - (1기) 나영채
 
-## 추가
-추가되었으면 하는 내용 카톡으로 알려주면 반영하겠슴.
-+ 로고만들 수 있는사람 환영
+## UPDATE
+- 2020.11.25 : 개발시작
+- 2020.11.26 : Home, Season1,2, Manager 페이지 개발, 반응형 
+- 2020.11.27 : Project 페이지 개발, Vue.JS 추가 (파라미터 수정으로 쉽게 내용을 추가할 수 있슴)
