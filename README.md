@@ -1,7 +1,7 @@
 # sju-coml.github.io
 SAI 공식 사이트
 
-## author
+## Author
 - (1기) 나영채
 
 ## 추가
