@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SAI</title>
     <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
 </head>
 
 <body>
-    <div class="container">
+    <div id="app" class="container">
         <nav class="navbar" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
                 <a class="navbar-item title is-4 m-0" href="https://github.com/sju-coml">
@@ -82,48 +84,23 @@
             </div>
         </section>
         <section class="section">
-            <div class="container columns" style="margin-bottom: 100px;">
-                <div class="column is-four-fifths">
-                    <h1 class="title">SAI - Sejong AI</h1>
-                    <h2 class="subtitle">
-                        SAI는 2019년 인공지능 스터디로 시작되어 각자의 경험을 인공지능을 배우고자 하는 사람들에게 알려주는 흐름을 만들어 주자는 생각으로 탄생한 동아리 입니다.
-                    </h2>
-                    <div style="width: 70%">
-                        <figure class="image is-16by9">
-                            <img src="https://bulma.io/images/placeholders/640x360.png">
-                        </figure>
+            <template v-for="(item, i) in content">
+                <div class="container columns" style="margin-bottom: 100px;">
+                    <div v-if="i%2!=0" class="column"></div>
+                    <div class="column is-four-fifths">
+                        <h1 class="title">{{item.title}}</h1>
+                        <h2 class="subtitle">
+                            {{item.subtitle}}
+                        </h2>
+                        <div style="width: 70%">
+                            <figure class="image is-16by9">
+                                <img src="https://bulma.io/images/placeholders/640x360.png">
+                            </figure>
+                        </div>
                     </div>
+                    <div v-if="i%2==0" class="column"></div>
                 </div>
-                <div class="column"></div>
-            </div>
-            <div class="container columns" style="margin-bottom: 100px;">
-                <div class="column"></div>
-                <div class="column is-four-fifths">
-                    <h1 class="title">Team</h1>
-                    <h2 class="subtitle">
-                        2020년의 SAI는 인공지능의 기본을 공부하는 I팀 4팀, 캐글을 이용한 데이터분석을 공부하는 A팀 3팀, AI관련 논문을 리뷰하는 S팀으로 진행되었습니다.
-                    </h2>
-                    <div style="width: 70%">
-                        <figure class="image is-16by9">
-                            <img src="https://bulma.io/images/placeholders/640x360.png">
-                        </figure>
-                    </div>
-                </div>
-            </div>
-            <div class="container columns" style="margin-bottom: 100px;">
-                <div class="column is-four-fifths">
-                    <h1 class="title">Project</h1>
-                    <h2 class="subtitle">
-                        매 학기마다 마음이 맞는 사람끼리 혹은 팀별로 프로젝트를 진행하며, 다양한 교내 대회참가로 좋은 성적을 거두고 있습니다.
-                    </h2>
-                    <div style="width: 70%">
-                        <figure class="image is-16by9">
-                            <img src="https://bulma.io/images/placeholders/640x360.png">
-                        </figure>
-                    </div>
-                </div>
-                <div class="column"></div>
-            </div>
+            </template>
         </section>
     </div>
     <footer class="footer">
@@ -143,5 +120,28 @@
 
             });
         });
+
+        new Vue({
+            el: '#app',
+            data: {
+                content: [{
+                        title: 'SAI - Sejong AI',
+                        subtitle: 'SAI는 2019년 인공지능 스터디로 시작되어 각자의 경험을 인공지능을 배우고자 하는 사람들에게 알려주는 흐름을 만들어 주자는 생각으로 탄생한 동아리 입니다.',
+                        img: 'https://bulma.io/images/placeholders/640x360.png'
+                    },
+                    {
+                        title: 'Team',
+                        subtitle: '2020년의 SAI는 인공지능의 기본을 공부하는 I팀 4팀, 캐글을 이용한 데이터분석을 공부하는 A팀 3팀, AI관련 논문을 리뷰하는 S팀으로 진행되었습니다.',
+                        img: 'https://bulma.io/images/placeholders/640x360.png'
+                    },
+                    {
+                        title: 'Project',
+                        subtitle: '매 학기마다 마음이 맞는 사람끼리 혹은 팀별로 프로젝트를 진행하며, 다양한 교내 대회참가로 좋은 성적을 거두고 있습니다.',
+                        img: 'https://bulma.io/images/placeholders/640x360.png'
+                    },
+                ]
+            },
+            
+        })
     </script>
 </body></html>
