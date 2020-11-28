@@ -45,14 +45,14 @@
                             <a class="navbar-item" href="season.html">
                                 Season 1, 2
                             </a>
-                            <a class="navbar-item" href="season3.html">
+                            <a class="navbar-item is-active" href="season3.html">
                                 Season 3
                             </a>
                             <a class="navbar-item" href="next.html">
                                 Next Season
                             </a>
                             <hr class="navbar-divider">
-                            <a class="navbar-item is-active" href="manager.html">
+                            <a class="navbar-item" href="manager.html">
                                 운영진
                             </a>
                         </div>
@@ -74,10 +74,10 @@
             <div class="hero-body">
                 <div class="container">
                     <h1 class="title">
-                        Manager
+                        {{title}}
                     </h1>
                     <h2 class="subtitle">
-                        고생하는 우리 동아리의 운영진들입니다.
+                        {{subtitle}}
                     </h2>
                 </div>
             </div>
@@ -89,20 +89,22 @@
                     <h2 class="subtitle">
                         {{s.subtitle}}
                     </h2>
-                    <div class="columns">
-                        <template v-for="p in s.profile">
-                            <div class="column">
-                                <div class="is-flex is-justify-content-center">
-                                    <figure class="image is-128x128">
-                                        <img class="is-rounded" :src="p.img">
-                                    </figure>
+                    <template v-for="col in columnCut(s.profile)">
+                        <div class="columns">
+                            <template v-for="row in col">
+                                <div class="column">
+                                    <div class="is-flex is-justify-content-center">
+                                        <figure class="image is-128x128">
+                                            <img class="is-rounded" :src="row.img">
+                                        </figure>
+                                    </div>
+                                    <div class="has-text-centered py-2">
+                                        <strong>{{row.name}}</strong><br>{{row.major}}
+                                    </div>
                                 </div>
-                                <div class="has-text-centered py-2">
-                                    <strong>{{p.name}}</strong><br>{{p.major}}
-                                </div>
-                            </div>
-                        </template>
-                    </div>
+                            </template>
+                        </div>
+                    </template>
                 </div>
             </template>
         </section>
@@ -127,34 +129,111 @@
 
         new Vue({
             el: '#app',
+            methods: {
+                columnCut: function(profile) {
+                    var cnt = 5;
+                    var col = [];
+
+                    for (var i = 0; i < parseInt(profile.length / cnt); i++) {
+                        var row = []
+                        for (var j = 0; j < cnt; j++) {
+                            row.push(profile[i * cnt + j])
+                        }
+                        col.push(row)
+                    }
+                    for (var j = col.length * cnt; j < profile.length; j++) {
+                        var row = []
+                        row.push(profile[j])
+                    }
+                    col.push(row)
+                    return col
+                }
+            },
             data: {
+                title: 'Season 3',
+                subtitle: '2020년 제일 멋진 사람들',
                 season: {
                     s3: {
-                        title: 'Season3 운영진',
-                        subtitle: '순간적으로 불어난 동아리의 커리큘럼 설계와 운영을 맡은 그대들...',
+                        title: 'Season3 - 2학기 I팀',
+                        subtitle: '2020 3월 ',
                         profile: [{
-                                name: '이장후',
-                                major: '컴퓨터공학 18',
+                                name: '김민지',
+                                major: '생명시스템학 19',
+                                img: 'https://bulma.io/images/placeholders/128x128.png'
+                            },
+                            {
+                                name: '김윤지',
+                                major: '생명시스템학 19',
+                                img: 'https://bulma.io/images/placeholders/128x128.png'
+                            },
+                            {
+                                name: '김해리',
+                                major: '생명시스템학 19',
                                 img: 'https://bulma.io/images/placeholders/128x128.png'
                             },
                             {
                                 name: '나영채',
-                                major: '바이오산업자원공학 19',
+                                major: '생명시스템학 19',
+                                img: './profile/나영채.jpeg'
+                            },
+                            {
+                                name: '박나영',
+                                major: '생명시스템학 19',
+                                img: 'https://bulma.io/images/placeholders/128x128.png'
+                            },
+                            {
+                                name: '손상원',
+                                major: '생명시스템학 19',
+                                img: 'https://bulma.io/images/placeholders/128x128.png'
+                            },
+                            {
+                                name: '송성곤',
+                                major: '생명시스템학 19',
+                                img: 'https://bulma.io/images/placeholders/128x128.png'
+                            },
+                            {
+                                name: '위영민',
+                                major: '생명시스템학 19',
                                 img: 'https://bulma.io/images/placeholders/128x128.png'
                             },
                             {
                                 name: '이주희',
-                                major: '경영학 16',
+                                major: '생명시스템학 19',
                                 img: 'https://bulma.io/images/placeholders/128x128.png'
                             },
                             {
-                                name: '최우혁',
-                                major: '생명시스템공학 20',
+                                name: '이현동',
+                                major: '생명시스템학 19',
+                                img: 'https://bulma.io/images/placeholders/128x128.png'
+                            },
+                            {
+                                name: '임가영',
+                                major: '생명시스템학 19',
+                                img: 'https://bulma.io/images/placeholders/128x128.png'
+                            },
+                            {
+                                name: '장문경',
+                                major: '생명시스템학 19',
+                                img: 'https://bulma.io/images/placeholders/128x128.png'
+                            },
+                            {
+                                name: '진현영',
+                                major: '생명시스템학 19',
+                                img: 'https://bulma.io/images/placeholders/128x128.png'
+                            },
+                            {
+                                name: '최웅혁',
+                                major: '생명시스템학 19',
+                                img: 'https://bulma.io/images/placeholders/128x128.png'
+                            },
+                            {
+                                name: '최태규',
+                                major: '생명시스템학 19',
                                 img: 'https://bulma.io/images/placeholders/128x128.png'
                             },
                         ],
                     },
-                },
+                }
             },
 
         })
