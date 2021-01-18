@@ -95,7 +95,7 @@
                                 <div class="column">
                                     <div class="is-flex is-justify-content-center">
                                         <figure class="image is-128x128">
-                                            <img class="is-rounded" :src="row.img">
+                                            <img class="is-rounded" :src="s.profileFolder+row.img">
                                         </figure>
                                     </div>
                                     <div class="has-text-centered py-2">
@@ -155,6 +155,7 @@
                     s3: {
                         title: 'Season3 - 2학기 I팀',
                         subtitle: '2020 3월 인공지능 학회',
+                        profileFolder: './profile/',
                         profile: [{
                                 name: '김민지',
                                 major: '생명시스템학 19',
@@ -168,12 +169,12 @@
                             {
                                 name: '김해리',
                                 major: '생명시스템학 19',
-                                img: 'https://bulma.io/images/placeholders/128x128.png'
+                                img: '김해리.png'
                             },
                             {
                                 name: '나영채',
                                 major: '생명시스템학 19',
-                                img: './profile/나영채.jpeg'
+                                img: '나영채.jpeg'
                             },
                             {
                                 name: '박나영',
