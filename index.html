@@ -93,8 +93,9 @@
                             {{item.subtitle}}
                         </h2>
                         <div style="width: 70%">
-                            <figure class="image is-16by9">
-                                <img src="https://bulma.io/images/placeholders/640x360.png">
+                            <!-- <figure class="image is-16by9"> -->
+                            <figure class="image">
+                                <img :src="item.img">
                             </figure>
                         </div>
                     </div>
@@ -127,17 +128,17 @@
                 content: [{
                         title: 'SAI - Sejong AI',
                         subtitle: 'SAI는 2019년 인공지능 스터디로 시작되어 각자의 경험을 인공지능을 배우고자 하는 사람들에게 알려주는 흐름을 만들어 주자는 생각으로 탄생한 동아리 입니다.',
-                        img: 'https://bulma.io/images/placeholders/640x360.png'
+                        img: './images/main1.jpeg'
                     },
                     {
                         title: 'Team',
                         subtitle: '2020년의 SAI는 인공지능의 기본을 공부하는 I팀 4팀, 캐글을 이용한 데이터분석을 공부하는 A팀 3팀, AI관련 논문을 리뷰하는 S팀으로 진행되었습니다.',
-                        img: 'https://bulma.io/images/placeholders/640x360.png'
+                        img: './images/main2.jpeg'
                     },
                     {
                         title: 'Project',
                         subtitle: '매 학기마다 마음이 맞는 사람끼리 혹은 팀별로 프로젝트를 진행하며, 다양한 교내 대회참가로 좋은 성적을 거두고 있습니다.',
-                        img: 'https://bulma.io/images/placeholders/640x360.png'
+                        img: './images/main3.png'
                     },
                 ]
             },

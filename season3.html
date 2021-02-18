@@ -95,7 +95,8 @@
                                 <div class="column">
                                     <div class="is-flex is-justify-content-center">
                                         <figure class="image is-128x128">
-                                            <img style="width: 100%; height: 100%;" class="is-rounded" :src="s.profileFolder+row.img">
+                                            <img v-if="row.img == ''" style="width: 100%; height: 100%;" class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+                                            <img v-if="row.img != ''" style="width: 100%; height: 100%;" class="is-rounded" :src="s.profileFolder+row.img">
                                         </figure>
                                     </div>
                                     <div class="has-text-centered py-2">
@@ -184,7 +185,7 @@
                             {
                                 name: '손상원',
                                 major: '생명시스템학 19',
-                                img: 'https://bulma.io/images/placeholders/128x128.png'
+                                img: ''
                             },
                             {
                                 name: '송성곤',
@@ -194,22 +195,22 @@
                             {
                                 name: '위영민',
                                 major: '생명시스템학 19',
-                                img: 'https://bulma.io/images/placeholders/128x128.png'
+                                img: ''
                             },
                             {
                                 name: '이주희',
                                 major: '생명시스템학 19',
-                                img: 'https://bulma.io/images/placeholders/128x128.png'
+                                img: ''
                             },
                             {
                                 name: '이현동',
                                 major: '생명시스템학 19',
-                                img: 'https://bulma.io/images/placeholders/128x128.png'
+                                img: ''
                             },
                             {
                                 name: '임가영',
                                 major: '생명시스템학 19',
-                                img: 'https://bulma.io/images/placeholders/128x128.png'
+                                img: ''
                             },
                             {
                                 name: '장문경',
