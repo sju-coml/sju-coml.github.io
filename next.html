@@ -42,10 +42,10 @@
                             Season
                         </a>
                         <div class="navbar-dropdown">
-                            <a class="navbar-item is-active" href="season.html">
+                            <a class="navbar-item" href="season.html">
                                 Season 1, 2
                             </a>
-                            <a class="navbar-item" href="season3.html">
+                            <a class="navbar-item is-active" href="season3.html">
                                 Season 3
                             </a>
                             <a class="navbar-item" href="next.html">
@@ -74,38 +74,13 @@
             <div class="hero-body">
                 <div class="container">
                     <h1 class="title">
-                        Season 1 &amp; Season 2
+                        {{title}}
                     </h1>
                     <h2 class="subtitle">
-                        서기원 . 나영채 . 이장후 . 임수현 . 주영준<br>
-                        김기홍 . 이상민 . 배현진
+                        {{subtitle}}
                     </h2>
                 </div>
             </div>
-        </section>
-        <section class="section">
-            <template v-for="s in season">
-                <div class="container" style="margin-bottom: 100px">
-                    <h1 class="title">{{s.title}}</h1>
-                    <h2 class="subtitle">
-                        {{s.subtitle}}
-                    </h2>
-                    <div class="columns">
-                        <template v-for="p in s.profile">
-                            <div class="column">
-                                <div class="is-flex is-justify-content-center">
-                                    <figure class="image is-128x128">
-                                        <img class="is-rounded" :src="p.img">
-                                    </figure>
-                                </div>
-                                <div class="has-text-centered py-2">
-                                    <strong>{{p.name}}</strong><br>{{p.major}}
-                                </div>
-                            </div>
-                        </template>
-                    </div>
-                </div>
-            </template>
         </section>
     </div>
     <footer class="footer">
@@ -127,66 +102,18 @@
                 // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
                 $(".navbar-burger").toggleClass("is-active");
                 $(".navbar-menu").toggleClass("is-active");
-
             });
         });
 
         new Vue({
             el: '#app',
-            data: {
-                season: {
-                    s1: {
-                        title: 'Season1',
-                        subtitle: '2019 3월 인공지능 & Kaggle 스터디로 시작!',
-                        profile: [{
-                                name: '서기원',
-                                major: '컴퓨터공학 14',
-                                img: 'https://bulma.io/images/placeholders/128x128.png'
-                            },
-                            {
-                                name: '나영채',
-                                major: '생명시스템학 19',
-                                img: './static/profile/나영채.jpeg'
-                            },
-                            {
-                                name: '임수현',
-                                major: '컴퓨터공학 17',
-                                img: 'https://bulma.io/images/placeholders/128x128.png'
-                            },
-                            {
-                                name: '이장후',
-                                major: '컴퓨터공학 18',
-                                img: 'https://bulma.io/images/placeholders/128x128.png'
-                            },
-                            {
-                                name: '나영채',
-                                major: '컴퓨터공학 14',
-                                img: 'https://bulma.io/images/placeholders/128x128.png'
-                            }
-                        ],
-                    },
-                    s2: {
-                        title: 'Season2',
-                        subtitle: '2019 9월 / 10월 새로운 멤버로 합류',
-                        profile: [{
-                                name: '배현진',
-                                major: '건축공학 12 / 세종대 대학원 건축공학 19',
-                                img: 'https://bulma.io/images/placeholders/128x128.png'
-                            },
-                            {
-                                name: '김기홍',
-                                major: '영어영문학14 -> 컴퓨터공학14 / GIST 대학원 컴퓨터공학 20',
-                                img: 'https://bulma.io/images/placeholders/128x128.png'
-                            },
-                            {
-                                name: '이상민',
-                                major: '무인이동체공학 17',
-                                img: 'https://bulma.io/images/placeholders/128x128.png'
-                            },
-                        ]
-                    }
-                }
+            methods: {
+                
             },
+            data: {
+                title: 'Next Season',
+                subtitle: '다음 시즌은 어떤 사람들로 채워질까요?',
+            }
 
         })
 
