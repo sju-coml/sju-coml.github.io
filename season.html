@@ -95,7 +95,8 @@
                             <div class="column">
                                 <div class="is-flex is-justify-content-center">
                                     <figure class="image is-128x128">
-                                        <img class="is-rounded" :src="p.img">
+                                        <img v-if="p.img == ''" style="width: 100%; height: 100%;" class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+                                        <img v-if="p.img != ''" style="width: 100%; height: 100%;" class="is-rounded" :src="p.img">
                                     </figure>
                                 </div>
                                 <div class="has-text-centered py-2">
@@ -146,7 +147,7 @@
                             {
                                 name: '나영채',
                                 major: '생명시스템학 19',
-                                img: './static/profile/나영채.jpeg'
+                                img: './profile/나영채.jpeg'
                             },
                             {
                                 name: '임수현',
@@ -159,7 +160,7 @@
                                 img: 'https://bulma.io/images/placeholders/128x128.png'
                             },
                             {
-                                name: '나영채',
+                                name: '주영준',
                                 major: '컴퓨터공학 14',
                                 img: 'https://bulma.io/images/placeholders/128x128.png'
                             }
@@ -167,7 +168,7 @@
                     },
                     s2: {
                         title: 'Season2',
-                        subtitle: '2019 9월 / 10월 새로운 멤버로 합류',
+                        subtitle: '2019 9월 / 10월 합류',
                         profile: [{
                                 name: '배현진',
                                 major: '건축공학 12 / 세종대 대학원 건축공학 19',
@@ -175,7 +176,7 @@
                             },
                             {
                                 name: '김기홍',
-                                major: '영어영문학14 -> 컴퓨터공학14 / GIST 대학원 컴퓨터공학 20',
+                                major: '영어영문학14 -> 컴퓨터공학 / GIST 대학원 컴퓨터공학 20',
                                 img: 'https://bulma.io/images/placeholders/128x128.png'
                             },
                             {
